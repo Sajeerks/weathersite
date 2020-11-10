@@ -3,7 +3,91 @@
 
 
  {% block content %}
-<h1> this is home</h1>
+<h1> this is home</h1> 
+<br>
+<br>
+{% if zipcode%}
+ 	{{zipcode}}
+
+{% endif %}
+
+<br>
+
+<!-- {{api.0}}<br>
+<br>
+<hr>
+{{api.1}}<br>
+<br>
+<hr>
+{{api.2}}<br>
+<br> -->
+<!-- <div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div> -->
+
+
+{% if api %}
+
+  	{% if api == "Error..." %}
+    There was and error
+    {% else %}
+
+
+{{color}}
+<div class="jumbotron  {{color}} ">
+  <h1 class="display-4">{{api.0.AQI}}</h1>
+  <p class="lead">DateForecast:{{api.0.DateForecast}}</p>
+  <hr class="my-4">
+ 		 DateForecast:{{api.0.DateForecast}}<br>
+		Air quality :{{api.0.AQI}}<br>
+		ReportingArea :{{api.0.ReportingArea}}<br>
+		StateCode :{{api.0.StateCode}}<br>
+
+		Category.Number :{{api.0.Category.Number}}<br>
+		Category.Name :{{api.0.Category.Name}}<br>
+ 
+</div>
+
+
+		
+		
+
+<div class="jumbotron  {{color1}}">
+  <h1 class="display-4">{{api.1.AQI}}</h1>
+  <p class="lead">DateForecast:{{api.1.DateForecast}}</p>
+  <hr class="my-4">
+ 		 DateForecast:{{api.1.DateForecast}}<br>
+		Air quality :{{api.1.AQI}}<br>
+		ReportingArea :{{api.1.ReportingArea}}<br>
+		StateCode :{{api.1.StateCode}}<br>
+
+		Category.Number :{{api.1.Category.Number}}<br>
+		Category.Name :{{api.1.Category.Name}}<br>
+ 
+</div>
+
+<div class="jumbotron {{color2}}">
+  <h1 class="display-4">{{api.2.AQI}}</h1>
+  <p class="lead">DateForecast:{{api.2.DateForecast}}</p>
+  <hr class="my-4">
+ 		 DateForecast:{{api.2.DateForecast}}<br>
+		Air quality :{{api.2.AQI}}<br>
+		ReportingArea :{{api.2.ReportingArea}}<br>
+		StateCode :{{api.2.StateCode}}<br>
+
+		Category.Number :{{api.2.Category.Number}}<br>
+		Category.Name :{{api.2.Category.Name}}<br>
+ 
+</div>
+
+
+
+	{% endif %}
+{% endif %}
 
 
     {% endblock %}
